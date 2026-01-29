@@ -1,2 +1,2 @@
-
+class coffee.shop
 
