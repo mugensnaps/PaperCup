@@ -5,7 +5,11 @@ TEAM_NAME = "PaperCup"  # <- change to your team name pun 😄
 EMPLOYEE_PASSWORD = "password"  # <- stretch goal: move to env var later
 
 
-# ---------- Data Models ----------
+
+TEAM_NAME = "PaperCup"
+EMPLOYEE_PASSWORD = "letmein"
+
+# Data Models
 @dataclass
 class Product:
     id: str
@@ -14,7 +18,6 @@ class Product:
     price: float
     stock: int
     details: str  # ingredients / author / description
-    delivery_eligible: bool = False  # for books
 
 @dataclass
 class BasketItem:
@@ -23,27 +26,35 @@ class BasketItem:
     unit_price: float
     qty: int
 
-
-# ---------- Sample Inventory ----------
+# Inventory
 def seed_inventory() -> Dict[str, Product]:
     return {
         # Drinks
         "D1": Product("D1", "drinks", "Flat White", 3.60, 30, "Espresso + steamed milk"),
         "D2": Product("D2", "drinks", "Matcha Latte", 4.10, 20, "Matcha + milk"),
         "D3": Product("D3", "drinks", "Iced Americano", 3.20, 25, "Espresso + water + ice"),
+        "D4": Product("D4", "drinks", "Tea", 2.00, 10, "Tea + hot water"),  
+        "D5": Product("D5", "drinks", "Herbal Tea", 3.00, 15, "Tea + herbs + hot water"), 
 
         # Food (cakes/snacks)
         "F1": Product("F1", "food", "Chocolate Brownie", 2.90, 15, "Cocoa, butter, eggs, sugar, flour"),
         "F2": Product("F2", "food", "Carrot Cake Slice", 3.40, 10, "Carrot, cinnamon, cream cheese frosting"),
+        "F3": Product("F3", "food", "Cheese Cake", 4.00, 10, "Cream cheese, digestive, vanilla"),
+        "F4": Product("F4", "food", "Croissant", 3.00, 15, "Bread"),
+        "F5": Product("F5", "food", "Chesse Bagel", 4.00, 7, "Cheese, Bread"),
+ 
 
         # Books
-        "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building", delivery_eligible=True),
-        "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction", delivery_eligible=True),
-        "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity", delivery_eligible=True),
+        "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building"),
+        "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction"),
+        "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity"),
+        "B4": Product("B4", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"), 
+        "B5": Product("B5", "books", "Harry Potter", 14.99, 7, "J K Rowling — Fiction"), 
+        
     }
 
 
-# ---------- Helpers ----------
+# ---------- Extra Functions for mathematical operations being called elsewhere ----------
 def money(x: float) -> str:
     return f"£{x:.2f}"
 
@@ -69,7 +80,7 @@ def ask_yes_no(prompt: str) -> bool:
         print("Please type Y or N.")
 
 
-# ---------- UI Screens ----------
+# ----------  functions for User Interface Screens ----------
 def print_header(title: str):
     print("\n" + "=" * 60)
     print(f"{TEAM_NAME} — {title}")
@@ -101,6 +112,8 @@ def choose_product(inventory: Dict[str, Product], category: str) -> Optional[Pro
     if choice == 0:
         return None
     return products[choice - 1]
+
+# Showing Output 
 
 def show_product_details(product: Product):
     print_header("DETAILS")
