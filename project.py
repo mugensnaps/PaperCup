@@ -4,6 +4,7 @@ from typing import Dict, List, Optional, Tuple
 TEAM_NAME = "PaperCup"
 EMPLOYEE_PASSWORD = "letmein"
 
+@dataclass
 class Product:
     id: str
     category: str  # "drinks" | "food" | "books"
@@ -36,5 +37,5 @@ def seed_inventory() -> Dict[str, Product]:
         "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building"),
         "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction"),
         "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity"),
-        "B4": Product("B3", "books", "Seven Habits of Highly Effective People", "Steven Cohen — Habit building"),  
+        "B4": Product("B3", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"),  
     }
