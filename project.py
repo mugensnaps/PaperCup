@@ -44,7 +44,7 @@ def seed_inventory() -> Dict[str, Product]:
 
 # Helper Functions
 def show_price(price):
-    return f"£{price:.2f}
+    return f"£{price:.2f}"
 
 def get_number_input(prompt,minimum, maximum):
     while True:
@@ -54,15 +54,16 @@ def get_number_input(prompt,minimum, maximum):
             if minimum <= number <= maximum:
                 return number 
         print(f"Please enter a number between {minimum} and {maximum}.")
+
 def ask_yes_or_no(question):
-while True:
-    answer = input(question + " (Y/N): ").lower()
-    if answer in ["y", "yes"]:
-        return True
-    elif answer in ["n", "no"]:
-        return False
-    else:
-        print("Please answer Y or N.")
+    while True:
+        answer = input(question + " (Y/N): ").lower()
+        if answer in ["y", "yes"]:
+            return True
+        elif answer in ["n", "no"]:
+            return False
+        else:
+            print("Please answer Y or N.")
 
 def wait_for_user():
     input("\nPress Enter to continue...")
