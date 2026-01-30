@@ -176,7 +176,7 @@ def apply_discount(total: float) -> Tuple[float, float]:
     return new_total, discount_amount
 
 
-# ---------- Employee Functions (Stretch) ----------
+# ---------- Employee Functions (dicounts + delivery)----------
 def employee_login() -> bool:
     print_header("EMPLOYEE LOGIN")
     pw = input("Enter employee password: ").strip()
@@ -226,14 +226,14 @@ def employee_update_stock(inventory: Dict[str, Product]):
     print("Stock updated.")
 
 
-# ---------- Main Flow (matches your diagram) ----------
+# ---------- USER JOURNEY ----------
 def customer_flow(inventory: Dict[str, Product]):
     basket: List[BasketItem] = []
     discounted = False
     discount_amount = 0.0
 
     while True:
-        print_header("WELCOME")
+        print_header("WELCOME TO PAPERCUP")
         print("What would you like to order today?")
         print("1. Drinks")
         print("2. Food")
@@ -245,7 +245,7 @@ def customer_flow(inventory: Dict[str, Product]):
         choice = ask_int("Select an option: ", 0, 5)
 
         if choice == 0:
-            print("Goodbye!")
+            print("Thank you for visitng, hope to see you soon!")
             return
 
         if choice in (1, 2, 3):
