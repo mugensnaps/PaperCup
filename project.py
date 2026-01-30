@@ -4,6 +4,7 @@ from typing import Dict, List, Optional, Tuple
 TEAM_NAME = "PaperCup"
 EMPLOYEE_PASSWORD = "letmein"
 
+# Data Models
 @dataclass
 class Product:
     id: str
@@ -20,6 +21,7 @@ class BasketItem:
     unit_price: float
     qty: int
 
+# Inventory
 def seed_inventory() -> Dict[str, Product]:
     return {
         # Drinks
@@ -39,3 +41,5 @@ def seed_inventory() -> Dict[str, Product]:
         "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity"),
         "B4": Product("B3", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"),  
     }
+
+# Helper Functions
