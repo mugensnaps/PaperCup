@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
-TEAM_NAME = "Brew & Bound"  # <- change to your team name pun 😄
-EMPLOYEE_PASSWORD = "letmein"  # <- stretch goal: move to env var later
+TEAM_NAME = "PaperCup"  # <- change to your team name pun 😄
+EMPLOYEE_PASSWORD = "password"  # <- stretch goal: move to env var later
 
 
 # ---------- Data Models ----------
