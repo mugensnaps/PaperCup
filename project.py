@@ -64,7 +64,7 @@ while True:
     else:
         print("Please answer Y or N.")
 
-def wait_for user():
+def wait_for_user():
     input("\nPress Enter to continue...")
 
 def clear_screen():
