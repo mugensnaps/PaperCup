@@ -54,7 +54,7 @@ def get_number_input(prompt,minimum, maximum):
             if minimum <= number <= maximum:
                 return number 
         print(f"Please enter a number between {minimum} and {maximum}.")
-def ask_yes_or_no(question:
+def ask_yes_or_no(question):
 while True:
     answer = input(question + " (Y/N): ").lower()
     if answer in ["y", "yes"]:
