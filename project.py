@@ -39,7 +39,40 @@ def seed_inventory() -> Dict[str, Product]:
         "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building"),
         "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction"),
         "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity"),
-        "B4": Product("B3", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"),  
+        "B4": Product("B4", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"),  
     }
 
 # Helper Functions
+def show_price(price):
+    return f"£{price:.2f}
+
+def get_number_input(prompt,minimum, maximum):
+    while True:
+        user_input = input(prompt)
+        if user_input.isdigit():
+            number = int(user_input)
+            if minimum <= number <= maximum:
+                return number 
+        print(f"Please enter a number between {minimum} and {maximum}.")
+def ask_yes_or_no(question:
+while True:
+    answer = input(question + " (Y/N): ").lower()
+    if answer in ["y", "yes"]:
+        return True
+    elif answer in ["n", "no"]:
+        return False
+    else:
+        print("Please answer Y or N.")
+
+def wait_for user():
+    input("\nPress Enter to continue...")
+
+def clear_screen():
+    print("\n" * 3)
+
+def get_text_input(prompt):
+    while True:
+        user_input = input(prompt).strip()
+        if len(user_input) > 0:
+            return user_input
+        print("Please enter something.")
