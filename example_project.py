@@ -13,6 +13,7 @@ class Product:
     price: float
     stock: int
     details: str  # ingredients / author / description
+    delivery_eligible: bool = False 
 
 @dataclass
 class BasketItem:
@@ -40,11 +41,11 @@ def seed_inventory() -> Dict[str, Product]:
  
 
         # Books
-        "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building"),
-        "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction"),
-        "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity"),
-        "B4": Product("B4", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building"), 
-        "B5": Product("B5", "books", "Harry Potter", 14.99, 7, "J K Rowling — Fiction"), 
+        "B1": Product("B1", "books", "Atomic Habits", 12.99, 8, "James Clear — Habit building", delivery_eligible=True),
+        "B2": Product("B2", "books", "The Midnight Library", 9.99, 6, "Matt Haig — Fiction", delivery_eligible=True),
+        "B3": Product("B3", "books", "Deep Work", 11.50, 5, "Cal Newport — Focus & productivity", delivery_eligible=True),
+        "B4": Product("B4", "books", "Seven Habits of Highly Effective People", 14.99, 7, "Steven Cohen — Habit building", delivery_eligible=True), 
+        "B5": Product("B5", "books", "Harry Potter", 14.99, 7, "J K Rowling — Fiction", delivery_eligible=True), 
         
     }
 
