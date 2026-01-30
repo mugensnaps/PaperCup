@@ -4,11 +4,6 @@ from typing import Dict, List, Optional, Tuple
 TEAM_NAME = "PaperCup"  # <- change to your team name pun 😄
 EMPLOYEE_PASSWORD = "password"  # <- stretch goal: move to env var later
 
-
-
-TEAM_NAME = "PaperCup"
-EMPLOYEE_PASSWORD = "letmein"
-
 # Data Models
 @dataclass
 class Product:
