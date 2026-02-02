@@ -3,8 +3,8 @@ from tkinter import messagebox, simpledialog
 from dataclasses import dataclass
 from typing import Dict, List
 
-TEAM_NAME = "Brew & Bound"
-EMPLOYEE_PASSWORD = "letmein"
+TEAM_NAME = "PaperCup"
+EMPLOYEE_PASSWORD = "password"
 
 
 # ---------- Data Models ----------
